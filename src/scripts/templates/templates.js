@@ -1,12 +1,10 @@
 
-function bbcPlaylistTemplate(playlistThumbnails){
+export function bbcPlaylistTemplate(playlistThumbnails){
 
-	let playlistHtml = BBCRadioModel.map( function(playlistObj){
+	let playlistHtml = playlistThumbnails.map( function(playlistObj){
 	return `
 		<div class="panel panel-default">
-      <div class="panel-body">
-        BBC RADIO PLAYLIST
-      </div>
+
        <div class="row">
 				<div class="col-sm-3 col-md-4 thumbnail-container">
           <div class="clearfix visible-xs-block"></div>
@@ -23,16 +21,16 @@ function bbcPlaylistTemplate(playlistThumbnails){
 	}).join('')
 	return playlistHtml
 }
+// <div class="panel-body">
+//   BBC RADIO PLAYLIST
+// </div>
 
+export function bbcHomeTemplate(featuredArtistThumbnail){
 
-function bbcHomeTemplate(featuredArtistThumbnail){
-
-	let homeHtml = BBCRadioModel.map( function(featuredArtistObj){
+	let homeHtml = featuredArtistThumbnail.map( function(featuredArtistObj){
 	return `
 		<div class="panel panel-default">
-      <div class="panel-body">
-        BBC RADIO - FEATURED ARTIST
-      </div>
+
       <div class="row">
   			<div class="col-sm-12 col-md-12 thumbnail-container">
           <div class="clearfix visible-xs-block"></div>
@@ -49,3 +47,6 @@ function bbcHomeTemplate(featuredArtistThumbnail){
 	}).join('')
 	return homeHtml
 }
+// <div class="panel-body">
+//   BBC RADIO - FEATURED ARTIST
+// </div>
