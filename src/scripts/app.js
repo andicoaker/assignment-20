@@ -1,4 +1,4 @@
-console.log('wowow')
+// console.log('wowow')
 import $ from 'jquery';
 import {BBCRadioCollection, BBCRadioModel} from './models/models.js'
 import{bbcPlaylistTemplate, bbcHomeTemplate} from './templates/templates.js'
@@ -17,7 +17,11 @@ import{bbcPlaylistTemplate, bbcHomeTemplate} from './templates/templates.js'
 
 const AppRouter = Backbone.Router.extend({
   initialize: function(){
-    console.log('app routing');
+    // console.log('app routing');
+		// QUERY SELECT nav buttons AND ADD EVENT-LISTENER
+		// let btnEls = document.querySelectorAll('nav button')
+	  // let btnElsArray = [...btnEls]
+		// btnElsArray.forEach() ---> addEventListener to change hash
     Backbone.history.start()
   },
 
@@ -27,7 +31,7 @@ const AppRouter = Backbone.Router.extend({
 		'' : 'showHome'
 	},
 
-	showHome: function(){
+	showHome: function(homeRoute){
 		let bbcRadioModel = new BBCRadioModel({singleFetch: true})
 		bbcRadioModel.fetch().then(function(serverRes){
 			console.log(bbcRadioModel);
@@ -54,7 +58,7 @@ const AppRouter = Backbone.Router.extend({
 		bbcRadioColl.fetch().then(function(serverRes){
 
 			let playlistModelsList = bbcRadioColl.models
-			let bigHTMLStr = bbcRadioPlaylistTemplate(playlistModelsList, 'root', {})
+			let bigHTMLStr = bbcPlaylistTemplate(playlistModelsList, 'root', {})
 			document.querySelector('#app-container').innerHTML = bigHTMLStr
 		})
 
@@ -62,3 +66,11 @@ const AppRouter = Backbone.Router.extend({
 
 })
 const myApp = new AppRouter()
+
+// ************* CLICK EVENT ****************
+//
+// button.addEventListener('click', function(evt){
+//   var clickedBttnEl = evt.target
+// 	var route = clickedBttnEl.dataset.route
+// 	window.location.hash = route
+// })

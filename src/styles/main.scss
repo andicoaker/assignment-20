@@ -1,13 +1,16 @@
+* {
+	box-sizing: border-box;
+}
+
 body{
 	background: purple;
 }
 
-$txt-color: red;
+// img: {
+// 	100%;
+// }
 
-h2{
-	color: $txt-color;
-}
-
-h3{
-	color: green;
+.thumbnail-container{
+	width: 30%;
+	margin: 0;
 }
