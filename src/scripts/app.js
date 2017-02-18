@@ -18,10 +18,22 @@ import{bbcPlaylistTemplate, bbcHomeTemplate} from './templates/templates.js'
 const AppRouter = Backbone.Router.extend({
   initialize: function(){
     // console.log('app routing');
-		// QUERY SELECT nav buttons AND ADD EVENT-LISTENER
-		// let btnEls = document.querySelectorAll('nav button')
-	  // let btnElsArray = [...btnEls]
-		// btnElsArray.forEach() ---> addEventListener to change hash
+		// // QUERY SELECT nav buttons AND ADD EVENT-LISTENER
+		// let btnEls = document.querySelectorAll('nav button');
+	  // let btnElsArray = [...btnEls];
+		// btnElsArray.forEach('click', function(evt) {
+		// 	  var clickedBttnEl = evt.target;
+		// 		var route = clickedBttnEl.dataset.route;
+		// 		window.location.hash = route
+		//
+		// })
+			// ---> addEventListener to change hash
+			// button.addEventListener('click', function(evt){
+			//   var clickedBttnEl = evt.target
+			// 	var route = clickedBttnEl.dataset.route
+			// 	window.location.hash = route
+			// })
+
     Backbone.history.start()
   },
 
@@ -36,7 +48,7 @@ const AppRouter = Backbone.Router.extend({
 		bbcRadioModel.fetch().then(function(serverRes){
 			console.log(bbcRadioModel);
 			let bigHTMLStr = bbcHomeTemplate(bbcRadioModel, 'root', {})
-			document.querySelector('#app-container').innerHTML = bigHTMLStr
+			document.querySelector('.row').innerHTML = bigHTMLStr
 		})
 
 	},
@@ -48,7 +60,7 @@ const AppRouter = Backbone.Router.extend({
 
 			let playlistModelsList = bbcRadioColl.models
 			let bigHTMLStr = bbcPlaylistTemplate(playlistModelsList, 'root', {})
-			document.querySelector('#app-container').innerHTML = bigHTMLStr
+			document.querySelector('.row').innerHTML = bigHTMLStr
 		})
 
 	},
@@ -59,18 +71,10 @@ const AppRouter = Backbone.Router.extend({
 
 			let playlistModelsList = bbcRadioColl.models
 			let bigHTMLStr = bbcPlaylistTemplate(playlistModelsList, 'root', {})
-			document.querySelector('#app-container').innerHTML = bigHTMLStr
+			document.querySelector('.row').innerHTML = bigHTMLStr
 		})
 
 	},
 
 })
 const myApp = new AppRouter()
-
-// ************* CLICK EVENT ****************
-//
-// button.addEventListener('click', function(evt){
-//   var clickedBttnEl = evt.target
-// 	var route = clickedBttnEl.dataset.route
-// 	window.location.hash = route
-// })

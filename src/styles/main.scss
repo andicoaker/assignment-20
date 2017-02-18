@@ -1,16 +1,32 @@
 * {
 	box-sizing: border-box;
+
 }
 
 body{
-	background: purple;
+	background-color: purple;
+
 }
 
 // img: {
 // 	100%;
 // }
 
+.panel{
+	border: none;
+	background-color: purple;
+
+}
+
 .thumbnail-container{
 	width: 30%;
-	margin: 0;
+	margin: 20px;
+	padding: 20px;
+	height: 480px;
+}
+
+.thumbnail{
+	background-color: #EAEBEC;
+	// font-size: 12px;
+
 }

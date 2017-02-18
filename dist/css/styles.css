@@ -2,10 +2,19 @@
   box-sizing: border-box; }
 
 body {
-  background: purple; }
+  background-color: purple; }
+
+.panel {
+  border: none;
+  background-color: purple; }
 
 .thumbnail-container {
   width: 30%;
-  margin: 0; }
+  margin: 20px;
+  padding: 20px;
+  height: 480px; }
+
+.thumbnail {
+  background-color: #EAEBEC; }
 
 /*# sourceMappingURL=styles.css.map*/
