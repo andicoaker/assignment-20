@@ -2,17 +2,27 @@
   box-sizing: border-box; }
 
 body {
-  background-color: purple; }
+  background-color: #94DCE1; }
+
+h1 {
+  text-align: center;
+  margin: 20px; }
+
+.page-content {
+  margin: 30px; }
 
 .panel {
   border: none;
-  background-color: purple; }
+  background-color: #94DCE1;
+  text-align: center; }
+
+h3 {
+  margin-bottom: 20px;
+  margin-top: 0px; }
 
 .thumbnail-container {
-  width: 30%;
-  margin: 20px;
-  padding: 20px;
-  height: 480px; }
+  height: 480px;
+  margin-bottom: 30px; }
 
 .thumbnail {
   background-color: #EAEBEC; }

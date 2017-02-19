@@ -18,14 +18,6 @@ export const BBCRadioModel = Backbone.Model.extend({
 
 })
 
-// export const BBCFeaturedArtistModel = Backbone.Model.extend({
-//
-// 	parse: function(rawJSONRes){
-// 		return rawJSONRes.playlist.introducing[0]
-// 	},
-//
-// 	url: `/proxy?api=http://www.bbc.co.uk/radio1/playlist.json`
-// })
 
 export const BBCRadioCollection = Backbone.Collection.extend({
 	initialize: function(radioNum){
@@ -33,7 +25,7 @@ export const BBCRadioCollection = Backbone.Collection.extend({
 	},
 
 	parse: function(rawServerRes){
-		console.log('parsing Response!!')
+		// console.log('parsing Response!!')
 		return rawServerRes.playlist.a
 	},
 

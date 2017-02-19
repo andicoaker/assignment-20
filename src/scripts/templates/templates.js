@@ -3,7 +3,7 @@ export function bbcPlaylistTemplate(playlistThumbnails){
 
 	let playlistHtml = playlistThumbnails.map( function(playlistObj){
 	return `
-  
+
 				<div class="col-sm-3 col-md-4 thumbnail-container">
           <div class="clearfix visible-xs-block"></div>
           <div class="thumbnail">
@@ -23,13 +23,12 @@ export function bbcPlaylistTemplate(playlistThumbnails){
 // </div>
 
 export function bbcHomeTemplate(featuredArtistModel){
-  console.log(featuredArtistModel);
+  // console.log(featuredArtistModel);
 	return `
         <div class="panel-body">
-          <h3>BBC RADIO - FEATURED ARTIST</h3>
+          <h3>FEATURED ARTIST</h3>
         </div>
-  			<div class="col-sm-12 col-md-12 thumbnail-container">
-          <div class="clearfix visible-xs-block"></div>
+  			<div class="col-md-6 col-md-offset-3 thumbnail-container">
           <div class="thumbnail">
             <img src="${featuredArtistModel.get('image')}">
             <div class="caption">
@@ -40,6 +39,3 @@ export function bbcHomeTemplate(featuredArtistModel){
         </div>`
 
 }
-// <div class="panel-body">
-//   BBC RADIO - FEATURED ARTIST
-// </div>
