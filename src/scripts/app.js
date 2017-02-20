@@ -2,13 +2,12 @@
 import $ from 'jquery';
 import {BBCRadioCollection, BBCRadioModel} from './models/models.js'
 import{bbcPlaylistTemplate, bbcHomeTemplate} from './templates/templates.js'
-
-function forEach(arr, cb){
-  for (var i = 0; i < arr.length; i++) {
-    cb(arr[i], i, arr)
-  }
-
-}
+//
+// function forEach(arr, cb){
+//   for (var i = 0; i < arr.length; i++) {
+//     cb(arr[i], i, arr)
+//   }
+// }
 
 // ************* ROUTER *************
 
@@ -17,19 +16,19 @@ const AppRouter = Backbone.Router.extend({
 		// // QUERY SELECT nav buttons AND ADD EVENT-LISTENER
 		let btnEls = document.querySelectorAll('nav button');
 		console.log(btnEls);
-	  let btnElsArray = [btnEls];
+	  let btnElsArray = [...btnEls];
 		console.log(btnElsArray);
 
-		forEach(btnElsArray, function (domEl, index){
+		btnElsArray.forEach(function (domEl, i){
+			console.log(i)
 			domEl.addEventListener('click', function(evt) {
 				console.log('event heard');
-			  // var clickedBttnEl = evt.target;
-				// var route = clickedBttnEl.dataset.route;
-				// window.location.hash = route
+			  var clickedBttnEl = evt.target;
+				var route = clickedBttnEl.dataset.route;
+
+				window.location.hash = route
 			})
-
 		})
-
     Backbone.history.start()
   },
 
